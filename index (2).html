@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Everythink - All in One Learning Hub</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Custom theme */
+    :root {
+      --primary-color: #1565c0;
+      --secondary-color: #4f8dc7;
+      --light-bg: #f9fbfd;
+      --card-shadow: 0 2px 8px rgba(80,110,140,.08);
+    }
+    
+    body { 
+      background: var(--light-bg); 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    }
+    
+    .module-section { 
+      margin-bottom: 3rem; 
+      padding-top: 2rem;
+    }
+    
+    .module-header { 
+      color: var(--primary-color); 
+      border-left: 4px solid var(--secondary-color); 
+      padding-left: 15px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .everythink-logo { 
+      font-weight: bold; 
+      color: var(--primary-color); 
+      letter-spacing: 1.5px; 
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .everythink-logo i {
+      margin-right: 8px;
+      font-size: 1.5rem;
+    }
+    
+    .card { 
+      box-shadow: var(--card-shadow);
+      border: none;
+      transition: all 0.3s ease;
+      height: 100%;
+      border-radius: 8px;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(80,110,140,.15);
+    }
+    
+    .card-body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.25rem 0.5rem;
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+    
+    .footer { 
+      font-size: 0.95rem; 
+      color: #999; 
+      border-top: 1px solid #ddd; 
+      margin-top: 2rem; 
+      padding: 1.5rem 0 1rem 0; 
+      background: white;
+    }
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary-color);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1000;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+    }
+    
+    .navbar-nav {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .nav-link {
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 991px) {
+      .navbar-collapse {
+        max-height: 70vh;
+        overflow-y: auto;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .everythink-logo { 
+        font-size: 1.4rem; 
+      }
+      
+      .everythink-logo i {
+        font-size: 1.2rem;
+      }
+      
+      .module-header { 
+        font-size: 1.25rem; 
+      }
+      
+      .card-body {
+        padding: 1rem 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand everythink-logo" href="#">
+      <i class="fas fa-brain"></i>KiranLearnHub
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#jobportal">Job Portal</a></li>
+        <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ai">AI Tools</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testing">Testing</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cheatsheets">Cheat Sheets</a></li>
+        <li class="nav-item"><a class="nav-link" href="#apis">APIs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#docs">Docs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#coding">Coding</a></li>
+        <li class="nav-item"><a class="nav-link" href="#devtools">Dev Tools</a></li>
+        <li class="nav-item"><a class="nav-link" href="#languages">Languages</a></li>
+        <li class="nav-item"><a class="nav-link" href="#bizai">Business AI</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Modules -->
+<div class="container py-4">
+
+  <!-- Job Portal -->
+  <section id="jobportal" class="module-section">
+    <h2 class="module-header"><i class="fas fa-briefcase"></i> Job Portal</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+      <div class="col"><a href="https://weworkremotely.com/" target="_blank" class="card text-decoration-none">We Work Remotely</a></div>
+      <div class="col"><a href="https://justremote.co/" target="_blank" class="card text-decoration-none">Just Remote</a></div>
+      <div class="col"><a href="https://javascript.jobs/remote" target="_blank" class="card text-decoration-none">JavaScript Jobs</a></div>
+      <div class="col"><a href="https://www.remotejobs.io/" target="_blank" class="card text-decoration-none">RemoteJobs.io</a></div>
+      <div class="col"><a href="https://trulyremote.co/" target="_blank" class="card text-decoration-none">TrulyRemote</a></div>
+      <div class="col"><a href="https://www.flexjobs.com/" target="_blank" class="card text-decoration-none">FlexJobs</a></div>
+      <div class="col"><a href="https://jobs.best-jobs-online.com" target="_blank" class="card text-decoration-none">Best Jobs Online</a></div>
+      <div class="col"><a href="https://www.naukri.com/" target="_blank" class="card text-decoration-none">Naukri</a></div>
+      <div class="col"><a href="https://www.instahyre.com/" target="_blank" class="card text-decoration-none">Instahyre</a></div>
+      <div class="col"><a href="https://www.freshersworld.com/" target="_blank" class="card text-decoration-none">FreshersWorld</a></div>
+      <div class="col"><a href="https://www.shine.com/" target="_blank" class="card text-decoration-none">Shine</a></div>
+      <div class="col"><a href="https://www.linkedin.com/" target="_blank" class="card text-decoration-none">LinkedIn</a></div>
+      <div class="col"><a href="https://in.indeed.com/" target="_blank" class="card text-decoration-none">Indeed</a></div>
+      <div class="col"><a href="https://www.foundit.in/" target="_blank" class="card text-decoration-none">Foundit.in</a></div>
+    </div>
+  </section>
+
+  <!-- Online Courses -->
+  <section id="courses" class="module-section">
+    <h2 class="module-header"><i class="fas fa-graduation-cap"></i> Online Courses</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+      <div class="col"><a href="https://infyspringboard.onwingspan.com/" target="_blank" class="card text-decoration-none">InfySpringboard</a></div>
+      <div class="col"><a href="https://skillsbuild.org/learners" target="_blank" class="card text-decoration-none">IBM SkillsBuild</a></div>
+      <div class="col"><a href="https://freecodecamp.org/" target="_blank" class="card text-decoration-none">freeCodeCamp</a></div>
+      <div class="col"><a href="https://www.coursera.org/" target="_blank" class="card text-decoration-none">Coursera</a></div>
+      <div class="col"><a href="https://learn.microsoft.com/" target="_blank" class="card text-decoration-none">Microsoft Learn</a></div>
+      <div class="col"><a href="https://www.udemy.com/" target="_blank" class="card text-decoration-none">Udemy</a></div>
+      <div class="col"><a href="https://www.udacity.com/" target="_blank" class="card text-decoration-none">Udacity</a></div>
+      <div class="col"><a href="https://www.edx.org/" target="_blank" class="card text-decoration-none">edX</a></div>
+      <div class="col"><a href="https://www.khanacademy.org/" target="_blank" class="card text-decoration-none">Khan Academy</a></div>
+      <div class="col"><a href="https://www.sololearn.com/" target="_blank" class="card text-decoration-none">SoloLearn</a></div>
+      <div class="col"><a href="https://www.futurelearn.com/" target="_blank" class="card text-decoration-none">FutureLearn</a></div>
+      <div class="col"><a href="https://www.pluralsight.com/" target="_blank" class="card text-decoration-none">Pluralsight</a></div>
+    </div>
+  </section>
+
+  <!-- AI Tools -->
+  <section id="ai" class="module-section">
+    <h2 class="module-header"><i class="fas fa-robot"></i> AI Tools</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+      <div class="col"><a href="https://www.aixploria.com/en/free-ai/" target="_blank" class="card text-decoration-none">Aixploria</a></div>
+      <div class="col"><a href="https://quickref.me/" target="_blank" class="card text-decoration-none">QuickRef</a></div>
+      <div class="col"><a href="https://www.wolframalpha.com/" target="_blank" class="card text-decoration-none">WolframAlpha</a></div>
+      <div class="col"><a href="http://opensourcealternative.to" target="_blank" class="card text-decoration-none">Open Source Alt</a></div>
+      <div class="col"><a href="https://openai.com/" target="_blank" class="card text-decoration-none">OpenAI</a></div>
+      <div class="col"><a href="https://www.midjourney.com/" target="_blank" class="card text-decoration-none">Midjourney</a></div>
+      <div class="col"><a href="https://www.deepmind.com/" target="_blank" class="card text-decoration-none">DeepMind</a></div>
+      <div class="col"><a href="https://huggingface.co/" target="_blank" class="card text-decoration-none">Hugging Face</a></div>
+    </div>
+  </section>
+
+  <!-- Testing & API Tools -->
+  <section id="testing" class="module-section">
+    <h2 class="module-header"><i class="fas fa-vial"></i> Testing & API Tools</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+      <div class="col"><a href="https://www.postman.com/" target="_blank" class="card text-decoration-none">Postman</a></div>
+      <div class="col"><a href="https://jestjs.io/" target="_blank" class="card text-decoration-none">Jest</a></div>
+      <div class="col"><a href="https://www.cypress.io/" target="_blank" class="card text-decoration-none">Cypress</a></div>
+      <div class="col"><a href="https://playwright.dev/" target="_blank" class="card text-decoration-none">Playwright</a></div>
+      <div class="col"><a href="https://www.selenium.dev/" target="_blank" class="card text-decoration-none">Selenium</a></div>
+      <div class="col"><a href="https://insomnia.rest/" target="_blank" class="card text-decoration-none">Insomnia</a></div>
+      <div class="col"><a href="https://httpie.io/" target="_blank" class="card text-decoration-none">HTTPie</a></div>
+      <div class="col"><a href="https://www.soapui.org/" target="_blank" class="card text-decoration-none">SoapUI</a></div>
+    </div>
+  </section>
+
+  <!-- Cheat Sheets & Quick References -->
+  <section id="cheatsheets" class="module-section">
+    <h2 class="module-header"><i class="fas fa-book-open"></i> Cheat Sheets & Quick References</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+      <div class="col"><a href="https://quickref.me/" target="_blank" class="card text-decoration-none">QuickRef.me</a></div>
+      <div class="col"><a href="https://devhints.io/" target="_blank" class="card text-decoration-none">DevHints</a></div>
+      <div class="col"><a href="https://overapi.com/" target="_blank" class="card text-decoration-none">OverAPI</a></div>
+      <div class="col"><a href="https://cheatography.com/" target="_blank" class="card text-decoration-none">Cheatography</a></div>
+      <div class="col"><a href="https://htmlcheatsheet.com/" target="_blank" class="card text-decoration-none">HTML CheatSheet</a></div>
+      <div class="col"><a href="https://www.codecademy.com/learn/learn-html/modules/learn-html-elements/cheatsheet" target="_blank" class="card text-decoration-none">Codecademy Cheatsheets</a></div>
+      <div class="col"><a href="https://www.git-tower.com/blog/git-cheat-sheet/" target="_blank" class="card text-decoration-none">Git Cheat Sheet</a></div>
+      <div class="col"><a href="https://www.debuggex.com/cheatsheet/regex/javascript" target="_blank" class="card text-decoration-none">Regex Cheat Sheet</a></div>
+    </div>
+  </section>
+
+  <!-- Free Public APIs -->
+  <section id="apis" class="module-section">
+    <h2 class="module-header"><i class="fas fa-plug"></i> Free Public APIs For Projects</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+      <div class="col"><a href="https://rapidapi.com/" target="_blank" class="card text-decoration-none">RapidAPI</a></div>
+      <div class="col"><a href="https://api-ninjas.com/" target="_blank" class="card text-decoration-none">API Ninjas</a></div>
+      <div class="col"><a href="https://apilist.fun/" target="_blank" class="card text-decoration-none">API List Fun</a></div>
+      <div class="col"><a href="https://public-apis.io/" target="_blank" class="card text-decoration-none">Public APIs.io</a></div>
+      <div class="col"><a href="https://any-api.com/" target="_blank" class="card text-decoration-none">Any API</a></div>
+      <div class="col"><a href="https://mixedanalytics.com/blog/list-of-free-apis-for-buildning-products-and-testing/" target="_blank" class="card text-decoration-none">Mixed Analytics APIs</a></div>
+      <div class="col"><a href="https://github.com/public-apis/public-apis" target="_blank" class="card text-decoration-none">Public APIs GitHub</a></div>
+      <div class="col"><a href="https://www.programmableweb.com/" target="_blank" class="card text-decoration-none">ProgrammableWeb</a></div>
+    </div>
+  </section>
+
+  <!-- Documentation -->
+  <section id="docs" class="module-section">
+    <h2 class="module-header"><i class="fas fa-folder-open"></i> Documentation</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+      <div class="col"><a href="https://devdocs.io/" target="_blank" class="card text-decoration-none">DevDocs</a></div>
+      <div class="col"><a href="https://webdocs.dev/" target="_blank" class="card text-decoration-none">WebDocs</a></div>
+      <div class="col"><a href="https://www.npmjs.com/" target="_blank" class="card text-decoration-none">NPM</a></div>
+      <div class="col"><a href="https://react.dev/" target="_blank" class="card text-decoration-none">React</a></div>
+      <div class="col"><a href="https://developer.mozilla.org/" target="_blank" class="card text-decoration-none">MDN Web Docs</a></div>
+      <div class="col"><a href="https://docs.python.org/" target="_blank" class="card text-decoration-none">Python Docs</a></div>
+      <div class="col"><a href="https://dev.mysql.com/doc/" target="_blank" class="card text-decoration-none">MySQL Docs</a></div>
+      <div class="col"><a href="https://nodejs.org/docs/" target="_blank" class="card text-decoration-none">Node.js Docs</a></div>
+    </div>
+  </section>
+
+  <!-- Coding Practice -->
+  <section id="coding" class="module-section">
+    <h2 class="module-header"><i class="fas fa-code"></i> Coding Practice</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+      <div class="col"><a href="https://leetcode.com/" target="_blank" class="card text-decoration-none">LeetCode</a></div>
+      <div class="col"><a href="https://www.hackerrank.com/" target="_blank" class="card text-decoration-none">HackerRank</a></div>
+      <div class="col"><a href="https://codeforces.com/" target="_blank" class="card text-decoration-none">Codeforces</a></div>
+      <div class="col"><a href="https://www.codechef.com/" target="_blank" class="card text-decoration-none">CodeChef</a></div>
+      <div class="col"><a href="https://www.topcoder.com/" target="_blank" class="card text-decoration-none">TopCoder</a></div>
+      <div class="col"><a href="https://exercism.org/" target="_blank" class="card text-decoration-none">Exercism</a></div>
+      <div class="col"><a href="https://www.codewars.com/" target="_blank" class="card text-decoration-none">Codewars</a></div>
+      <div class="col"><a href="https://projecteuler.net/" target="_blank" class="card text-decoration-none">Project Euler</a></div>
+    </div>
+  </section>
+
+  <!-- Dev Tools -->
+  <section id="devtools" class="module-section">
+    <h2 class="module-header"><i class="fas fa-tools"></i> Dev Tools</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+      <div class="col"><a href="https://codepen.io/" target="_blank" class="card text-decoration-none">CodePen</a></div>
+      <div class="col"><a href="https://regex101.com/" target="_blank" class="card text-decoration-none">Regex101</a></div>
+      <div class="col"><a href="https://jsonformatter.org/" target="_blank" class="card text-decoration-none">JSONFormatter</a></div>
+      <div class="col"><a href="https://stackblitz.com/" target="_blank" class="card text-decoration-none">StackBlitz</a></div>
+      <div class="col"><a href="https://jsfiddle.net/" target="_blank" class="card text-decoration-none">JSFiddle</a></div>
+      <div class="col"><a href="https://codesandbox.io/" target="_blank" class="card text-decoration-none">CodeSandbox</a></div>
+      <div class="col"><a href="https://www.json.org/json-en.html" target="_blank" class="card text-decoration-none">JSON.org</a></div>
+      <div class="col"><a href="https://www.online-json.com/" target="_blank" class="card text-decoration-none">Online JSON</a></div>
+    </div>
+  </section>
+
+  <!-- All Languages Learn -->
+  <section id="languages" class="module-section">
+    <h2 class="module-header"><i class="fas fa-language"></i> All Language Learn in One Place</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+      <div class="col"><a href="https://www.loecsen.com/" target="_blank" class="card text-decoration-none">Loecsen</a></div>
+      <div class="col"><a href="https://www.duolingo.com/" target="_blank" class="card text-decoration-none">Duolingo</a></div>
+      <div class="col"><a href="https://www.babbel.com/" target="_blank" class="card text-decoration-none">Babbel</a></div>
+      <div class="col"><a href="https://www.memrise.com/" target="_blank" class="card text-decoration-none">Memrise</a></div>
+      <div class="col"><a href="https://www.rosettastone.com/" target="_blank" class="card text-decoration-none">Rosetta Stone</a></div>
+      <div class="col"><a href="https://www.busuu.com/" target="_blank" class="card text-decoration-none">Busuu</a></div>
+      <div class="col"><a href="https://www.lingoda.com/" target="_blank" class="card text-decoration-none">Lingoda</a></div>
+      <div class="col"><a href="https://www.italki.com/" target="_blank" class="card text-decoration-none">italki</a></div>
+    </div>
+  </section>
+
+  <!-- Business Free AI Tools -->
+  <section id="bizai" class="module-section">
+    <h2 class="module-header"><i class="fas fa-business-time"></i> Business Free AI Tools</h2>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+      <div class="col"><a href="https://seostudio.tools/" target="_blank" class="card text-decoration-none">SEOStudio</a></div>
+      <div class="col"><a href="https://ryne.ai/" target="_blank" class="card text-decoration-none">Ryne AI</a></div>
+      <div class="col"><a href="https://www.rocket.new/" target="_blank" class="card text-decoration-none">Rocket New</a></div>
+      <div class="col"><a href="https://www.cymath.com/" target="_blank" class="card text-decoration-none">Cymath</a></div>
+      <div class="col"><a href="https://www.codewithrandom.com/" target="_blank" class="card text-decoration-none">CodeWithRandom</a></div>
+      <div class="col"><a href="https://typingclub.in/" target="_blank" class="card text-decoration-none">TypingClub</a></div>
+      <div class="col"><a href="https://rork.com/" target="_blank" class="card text-decoration-none">Rork</a></div>
+      <div class="col"><a href="https://studio.polotno.com/" target="_blank" class="card text-decoration-none">Polotno Studio</a></div>
+      <div class="col"><a href="http://topview.ai" target="_blank" class="card text-decoration-none">Topview.ai</a></div>
+      <div class="col"><a href="http://finalround.ai" target="_blank" class="card text-decoration-none">Finalround.ai</a></div>
+      <div class="col"><a href="http://ssemble.com" target="_blank" class="card text-decoration-none">Ssemble.com</a></div>
+      <div class="col"><a href="http://hipdf.com" target="_blank" class="card text-decoration-none">Hipdf.com</a></div>
+      <div class="col"><a href="http://kortix.ai" target="_blank" class="card text-decoration-none">Kortix.ai</a></div>
+      <div class="col"><a href="https://imgflip.com/" target="_blank" class="card text-decoration-none">Imgflip</a></div>
+      <div class="col"><a href="https://www.poptox.com/" target="_blank" class="card text-decoration-none">Poptox</a></div>
+      <div class="col"><a href="https://wegic.ai/" target="_blank" class="card text-decoration-none">Wegic.ai</a></div>
+      <div class="col"><a href="https://skywork.ai/" target="_blank" class="card text-decoration-none">Skywork.ai</a></div>
+      <div class="col"><a href="https://sharedchat.cn/" target="_blank" class="card text-decoration-none">Sharedchat.cn</a></div>
+      <div class="col"><a href="https://www.aippt.com/" target="_blank" class="card text-decoration-none">AIPPT</a></div>
+      <div class="col"><a href="http://emugames.net" target="_blank" class="card text-decoration-none">Emugames.net</a></div>
+      <div class="col"><a href="https://schoolhub.ai/" target="_blank" class="card text-decoration-none">Schoolhub.ai</a></div>
+      <div class="col"><a href="https://www.magicschool.ai/" target="_blank" class="card text-decoration-none">Magicschool.ai</a></div>
+      <div class="col"><a href="https://webwave.me/" target="_blank" class="card text-decoration-none">Webwave.me</a></div>
+      <div class="col"><a href="https://teleporthq.io/" target="_blank" class="card text-decoration-none">TeleportHQ</a></div>
+      <div class="col"><a href="https://uizard.io/" target="_blank" class="card text-decoration-none">Uizard</a></div>
+      <div class="col"><a href="https://bookipi.com/ai-website-builder/" target="_blank" class="card text-decoration-none">Bookipi AI Website Builder</a></div>
+      <div class="col"><a href="https://trivy.dev/v0.65/" target="_blank" class="card text-decoration-none">Trivy</a></div>
+      <div class="col"><a href="https://innove.ai/" target="_blank" class="card text-decoration-none">Innove.ai</a></div>
+      <div class="col"><a href="https://produkto.io/" target="_blank" class="card text-decoration-none">Produkto.io</a></div>
+      <div class="col"><a href="https://www.dyad.sh/" target="_blank" class="card text-decoration-none">Dyad.sh</a></div>
+      <div class="col"><a href="https://transkriptor.com/app/dashboard/" target="_blank" class="card text-decoration-none">Transkriptor</a></div>
+      <div class="col"><a href="https://zapier.com/" target="_blank" class="card text-decoration-none">Zapier</a></div>
+      <div class="col"><a href="https://www.gumloop.com/" target="_blank" class="card text-decoration-none">Gumloop</a></div>
+      <div class="col"><a href="https://cursor.com/" target="_blank" class="card text-decoration-none">Cursor</a></div>
+      <div class="col"><a href="https://notebooklm.google/" target="_blank" class="card text-decoration-none">NotebookLM</a></div>
+      <div class="col"><a href="https://chatgpt.com/" target="_blank" class="card text-decoration-none">ChatGPT</a></div>
+      <div class="col"><a href="https://claude.ai/" target="_blank" class="card text-decoration-none">Claude AI</a></div>
+      <div class="col"><a href="https://www.getrevio.com/" target="_blank" class="card text-decoration-none">GetRevio</a></div>
+      <div class="col"><a href="https://www.chataid.com/" target="_blank" class="card text-decoration-none">ChatAid</a></div>
+      <div class="col"><a href="https://icon.com/" target="_blank" class="card text-decoration-none">Icon.com</a></div>
+      <div class="col"><a href="https://gamma.com.ai/" target="_blank" class="card text-decoration-none">Gamma AI</a></div>
+      <div class="col"><a href="https://www.precision.co/" target="_blank" class="card text-decoration-none">Precision.co</a></div>
+      <div class="col"><a href="https://youratlas.com/" target="_blank" class="card text-decoration-none">YourAtlas</a></div>
+      <div class="col"><a href="https://n8n.io/" target="_blank" class="card text-decoration-none">n8n.io</a></div>
+      <div class="col"><a href="https://lovable.dev/" target="_blank" class="card text-decoration-none">Lovable.dev</a></div>
+      <div class="col"><a href="https://vapi.ai/" target="_blank" class="card text-decoration-none">Vapi AI</a></div>
+      <div class="col"><a href="https://www.twilio.com" target="_blank" class="card text-decoration-none">Twilio</a></div>
+      <div class="col"><a href="http://hunter.io" target="_blank" class="card text-decoration-none">Hunter.io</a></div>
+      <div class="col"><a href="https://rocketreach.co/dashboard" target="_blank" class="card text-decoration-none">RocketReach</a></div>
+      <div class="col"><a href="https://same.new/" target="_blank" class="card text-decoration-none">Same.new</a></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Back to top button -->
+<a href="#" class="back-to-top" id="backToTop">
+  <i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- Footer -->
+<footer class="footer text-center">
+  <div class="container">
+    &copy; 2025 Everythink. All Rights Reserved.
+  </div>
+</footer>
+
+<!-- JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Back to top button functionality
+  const backToTopButton = document.getElementById('backToTop');
+  
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+  });
+  
+  backToTopButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a.nav-link').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 70,
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu after clicking
+        const navbarCollapse = document.getElementById('navMenu');
+        if (navbarCollapse.classList.contains('show')) {
+          new bootstrap.Collapse(navbarCollapse).toggle();
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
